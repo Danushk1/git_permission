@@ -21,6 +21,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::middleware(['auth'])->group(function(){
 Route::get('/home', [App\Http\Controllers\PostController::class, 'index'])->name('home');
 
 //Route::get('/',[PostController::class,'index']);
@@ -40,3 +41,4 @@ Route::delete('/delete/{id}',[PostController::class,'destroy']);
 Route::put('/update/{id}',[PostController::class,'update']);
 
 
+});
