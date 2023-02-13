@@ -54,9 +54,9 @@
                 @foreach ($posts as $post)
                 <tr>
                     <th scope="row">{{ $post->id }}</th>
-                    <td>{{ $post->title }}</td>
-                    <td>{{ $post->author }}</td>
-                    <td>{{ $post->body }}</td>
+                    <td>{!!  $post->title !!}</td>
+                    <td>{!! $post->author !!}</td>
+                    <td>{!! $post->body !!}</td>
 
 
 

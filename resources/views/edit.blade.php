@@ -41,8 +41,8 @@
                         <form action="/update/{{ $posts->id }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method("put")
-                         <input onmouseover="bt();" id="h1" type="text" name="title" class="form-control m-2" placeholder="title" value="{{ $posts->title }}">
-        				 <input onmouseover="b1();" id="h2" type="text" name="author" class="form-control m-2" placeholder="author" value="{{ $posts->author }}">
+                         <Textarea onmouseover="bt();" id="h1" type="text" name="title" class="form-control m-2" placeholder="title" >{{ $posts->title }}</Textarea>
+        				 <Textarea onmouseover="b1();" id="h2" type="text" name="author" class="form-control m-2" placeholder="author" >{{ $posts->author }}</Textarea>
                          <Textarea onmouseover="b2();" id="h3" name="body" cols="20" rows="4" class="form-control m-2" placeholder="body">{{ $posts->body }}</Textarea>
                          <label class="m-2">Cover Image</label>
                          <input type="file" id="input-file-now-custom-3" class="form-control m-2" name="cover">

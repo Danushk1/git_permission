@@ -160,6 +160,24 @@ $role_user->givePermissionTo('view');
     }
 
    
+    public function inline(Request $request,$id)
+    {
+        $user = Auth::user();
+        if ($user->can('edit')) {
+            $post = Post::findorFail($request->id);
+            if ($post) {
+                $post->content = $request->post_content;
+                $post->save();
+                if ($request->is_ajax_call) {
+                    return response()->json(['success' => 'Post content edited Successfully']);
+                }
+            }
+        } else {
+            if ($request->is_ajax_call) {
+                return response()->json(['error' => 'Ops! You dont have Permission!']);
+            }
+        }
+    }
 
 
 }

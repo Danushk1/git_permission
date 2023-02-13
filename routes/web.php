@@ -39,6 +39,7 @@ Route::delete('/delete/{id}',[PostController::class,'destroy']);
 
 
 Route::put('/update/{id}',[PostController::class,'update']);
+Route::post('/post/inline', [PostController::class,'inline'])->name('inline');
 
 
 });
